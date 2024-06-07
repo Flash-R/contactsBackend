@@ -1,7 +1,7 @@
 const { constants } = require("../constants");
 
 const errorHandler = (err, req, res, next) => {
-    const statusCode = req.statusCode ? res.statusCode : 500;
+    const statusCode = req.statusCode ? res.statusCode : 404;
     switch (statusCode) {
         case constants.VALIDATION_ERROR:
             res.json({

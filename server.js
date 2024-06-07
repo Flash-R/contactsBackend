@@ -5,6 +5,7 @@ const app = express();
 
 // contact rout
 const contactRouter = require('./routes/contact');
+const userRouter = require('./routes/userRoutes');
 const errorHandler = require('./middleware/errorHandler');
 const connectDb = require('./config/dbConnection');
 // connecting to database
@@ -15,6 +16,7 @@ connectDb();
 app.use(express.json());
 // for contacts
 app.use('/api/v1/contacts', contactRouter)
+app.use('/api/v1/users', userRouter)
 // error handler middleware
 app.use(errorHandler);
 
